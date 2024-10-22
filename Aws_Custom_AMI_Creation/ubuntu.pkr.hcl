@@ -38,18 +38,27 @@ build {
   sources = [
     "source.amazon-ebs.ami-ubuntu"
   ]
+
+  provisioner "shell" {
+    inline = [
+      "echo Installing Updates",
+      "sudo apt-get update",
+      "sudo apt-get upgrade -y",
+      "sudo apt-get install -y nginx"
+    ]
+  }
   
-  provisioner "file" {
-  source      = var.source_file         # Path to the local file
-  destination = var.destination_path    # Path on the build machine
-}
+//   provisioner "file" {
+//   source      = var.source_file         # Path to the local file
+//   destination = var.destination_path    # Path on the build machine
+// }
 
-provisioner "shell" {
-  inline = [
-    echo 'File copied successfully!' > fp_req.txt
-  ]
+// provisioner "shell" {
+//   inline = [
+//     echo 'File copied successfully!' > fp_req.txt
+//   ]
 
-}
+// }
 }
 
 
