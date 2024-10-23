@@ -17,12 +17,12 @@ source "amazon-ebs" "ami-ubuntu" {
       root-device-type    = "${ var.ami_filters }"
       virtualization-type = "${ var.ami_filters }"
     }
+
     most_recent = true
     owners      =  var.ami_owners
-
-    ssh_username = var.ssh_username
-  tags{
-    {
+     ssh_username = var.ssh_username
+  tags
+  {
     Name      =  "${var.ssh_username}"
     Environment = "${var.ssh_username}"
     OS_Version = "${var.ssh_username}"
@@ -30,7 +30,7 @@ source "amazon-ebs" "ami-ubuntu" {
     Created-by = "${var.ssh_username}"
   }
 }
-  }
+}
 
 
 build {
