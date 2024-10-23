@@ -15,8 +15,8 @@ variable "instance_type" {
 
 
 variable "region" {
-  type    = list(string)
-  default = ["us-east-1"]
+  type    = string
+  default = "us-east-1"
 }
 
 variable "ami_filters" {
