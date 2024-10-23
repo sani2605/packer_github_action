@@ -19,18 +19,18 @@ source "amazon-ebs" "ami-ubuntu" {
     }
     most_recent = true
     owners      =  var.ami_owners
-  }
 
-  ssh_username = var.ssh_username
+    ssh_username = var.ssh_username
   tags{
     {
-    Name      = "${var.ssh_username}"
+    Name      =  "${var.ssh_username}"
     Environment = "${var.ssh_username}"
     OS_Version = "${var.ssh_username}"
     Release    = "${var.ssh_username}"
     Created-by = "${var.ssh_username}"
   }
 }
+  }
 
 
 build {
