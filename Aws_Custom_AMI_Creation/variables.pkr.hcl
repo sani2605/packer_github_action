@@ -1,4 +1,4 @@
-variable "image_id" {
+variable "ami_name" {
   type    = string
   default = "packer-ubuntu-custome-image-{{timestamp}}"
 
@@ -33,10 +33,7 @@ variable "ami_owners" {
   default = ["099720109477"]
 }
 
-variable "communicator"{
-  type    = string
-  default = "ssh"
-}
+
 variable "ssh_username" {
   type    = string
   default = "ubuntu"
