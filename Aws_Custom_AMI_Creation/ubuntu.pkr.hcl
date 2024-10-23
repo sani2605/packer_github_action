@@ -22,14 +22,6 @@ source "amazon-ebs" "ami-ubuntu" {
      most_recent = true
      owners      =  var.ami_owners
      ssh_username = var.ssh_username
-
-  /* tags = {
-    Name      =  "${var.ssh_username}"
-    Environment = "${var.ssh_username}"
-    OS_Version = "${var.ssh_username}"
-    Release    = "${var.ssh_username}"
-    Created-by = "${var.ssh_username}"
-  } */
 }
 }
 
@@ -48,6 +40,15 @@ build {
       "sudo apt-get install -y nginx"
     ]
   } 
+}
+
+/* tags = {
+    Name      =  "${var.ssh_username}"
+    Environment = "${var.ssh_username}"
+    OS_Version = "${var.ssh_username}"
+    Release    = "${var.ssh_username}"
+    Created-by = "${var.ssh_username}"
+  } */
   
  /* provisioner "file" {
    source      = var.source_file         # Path to the local file
@@ -59,7 +60,7 @@ inline = [
     echo 'File copied successfully!' > fp_req.txt
   ] */
  
-} 
+
 
 
 
