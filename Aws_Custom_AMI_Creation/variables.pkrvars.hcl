@@ -34,6 +34,11 @@ variable "ami_owners" {
 }
 
 variable "ssh_username" {
+  type    = string
+  default = "ubuntu"
+}
+
+/* variable "ssh_username" {
   type    = map(string)
   default {
     Name      = "MyUbuntuAMIImage"
@@ -42,7 +47,7 @@ variable "ssh_username" {
     Release    = "Latest"
     Created-by = "Packer"
   }
-  }
+  } */
 
 variable "source_file" {
   description = "The file to copy to the build machine"

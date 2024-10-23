@@ -11,6 +11,7 @@ source "amazon-ebs" "ami-ubuntu" {
   ami_name      = var.image_id
   instance_type = var.instance_type
   region        = var.region
+
   source_ami_filter {
     filters = {
       name                = "${ var.ami_filters }"
@@ -18,17 +19,17 @@ source "amazon-ebs" "ami-ubuntu" {
       virtualization-type = "${ var.ami_filters }"
     }
 
-    most_recent = true
-    owners      =  var.ami_owners
+     most_recent = true
+     owners      =  var.ami_owners
      ssh_username = var.ssh_username
 
-  tags = {
+  /* tags = {
     Name      =  "${var.ssh_username}"
     Environment = "${var.ssh_username}"
     OS_Version = "${var.ssh_username}"
     Release    = "${var.ssh_username}"
     Created-by = "${var.ssh_username}"
-  }
+  } */
 }
 }
 
