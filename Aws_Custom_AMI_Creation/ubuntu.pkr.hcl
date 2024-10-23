@@ -8,7 +8,7 @@ packer {
 }
 
 source "amazon-ebs" "ami-ubuntu" {
-  ami_name      = var,image_id
+  ami_name      = var.image_id
   instance_type = var.instance_type
   region        = var.region
   source_ami_filter {

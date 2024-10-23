@@ -2,10 +2,10 @@ variable "image_id" {
   type    = string
   default = "packer-ubuntu-custome-image-{{timestamp}}"
 
-validation {
+/* validation {
     condition     = length(var.image_id) > 4 && substr(var.image_id, 0, 4) == "ami-"
     error_message = "The image_id value must be a valid AMI ID, starting with \"ami-\"."
-  }
+  } */
 }
 
 variable "instance_type" {
@@ -30,13 +30,13 @@ variable "ami_filters" {
 
 variable "ami_owners" {
   type    = list(string)
-  default = ["099720109477"]
+  default = [""]
 }
 
 variable "ssh_username" {
   type    = map(string)
   default {
-    Name      = "MyUbuntuImage"
+    Name      = "MyUbuntuAMIImage"
     Environment = "Production"
     OS_Version = "Ubuntu 22.04"
     Release    = "Latest"
