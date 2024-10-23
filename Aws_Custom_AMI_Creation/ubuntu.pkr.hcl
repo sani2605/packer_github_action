@@ -1,7 +1,7 @@
 packer {
   required_plugins {
     amazon = {
-      version = ">= 1.3.2"
+      version = ">= 1.2.8"
       source  = "github.com/hashicorp/amazon"
     }
   }
@@ -13,9 +13,9 @@ source "amazon-ebs" "ami-ubuntu" {
   region        = var.region
 
   source_ami_filter {
-      filters  =  var.ami_filters
+      filters  =  "${var.ami_filters}"
       most_recent = true
-     owners  =  var.ami_owners
+     owners  =  "${var.ami_owners}"
     } 
      ssh_username=var.ssh_username
 }
