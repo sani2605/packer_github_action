@@ -21,7 +21,7 @@ source "amazon-ebs" "ami-ubuntu" {
     most_recent = true
     owners      =  var.ami_owners
      ssh_username = var.ssh_username
-  tags
+  tags =
   {
     Name      =  "${var.ssh_username}"
     Environment = "${var.ssh_username}"
