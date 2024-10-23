@@ -56,8 +56,8 @@ build {
 provisioner "shell" {
 inline = [
     echo 'File copied successfully!' > fp_req.txt
-  ]
- */
+  ] */
+ 
 } 
 
 
