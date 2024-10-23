@@ -28,9 +28,7 @@ source "amazon-ebs" "ami-ubuntu" {
 
 build {
   name    = "packer-ubuntu-ami-template"
-  sources = [
-    "source.amazon-ebs.ami-ubuntu"
-  ]
+  sources = ["source.amazon-ebs.ami-ubuntu"]
 
    provisioner "shell" {
     inline = [
