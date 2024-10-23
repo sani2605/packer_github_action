@@ -32,6 +32,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: "us-east-1" # Optionally include this if you're using a specific region
 
+      - name: Print working directory
+        run: |
+            pwd
+            ls -R
+
       - name: Run Packer Build
         run: |
           cd Packer_GITHUB_ACTION/Aws_Custom_AMI_Creation
