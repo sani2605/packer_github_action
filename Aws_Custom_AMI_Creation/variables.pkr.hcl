@@ -33,6 +33,10 @@ variable "ami_owners" {
   default = ["099720109477"]
 }
 
+variable "communicator"{
+  type    = string
+  default = "ssh"
+}
 variable "ssh_username" {
   type    = string
   default = "ubuntu"

@@ -20,7 +20,8 @@ source "amazon-ebs" "ami-ubuntu" {
     }
 
      
-     ssh_username = var.ssh_username
+     communicator = var.communicator
+     ssh_username=var.ssh_username
 }
 }
 
