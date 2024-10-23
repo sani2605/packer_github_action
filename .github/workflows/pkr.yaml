@@ -41,6 +41,5 @@ jobs:
         run: |
           cd ${{ github.workspace }}/Aws_Custom_AMI_Creation
           packer init ubuntu.pkr.hcl
-          packer fmt ubuntu.pkr.hcl
           packer validate ubuntu.pkr.hcl
           packer build ubuntu.pkr.hcl
