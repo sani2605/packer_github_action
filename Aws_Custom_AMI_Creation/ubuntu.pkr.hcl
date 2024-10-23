@@ -13,22 +13,22 @@ source "amazon-ebs" "ami-ubuntu" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = var.ami_filters
-      root-device-type    = var.ami_filters
-      virtualization-type = var.ami_filters
+      name                = "${ var.ami_filters }"
+      root-device-type    = "${ var.ami_filters }"
+      virtualization-type = "${ var.ami_filters }"
     }
     most_recent = true
     owners      =  var.ami_owners
   }
+
   ssh_username = var.ssh_username
   tags{
     {
-    Name      = var.ssh_username
-    Environment = var.ssh_username
-    OS_Version = var.ssh_username
-    Release    = var.ssh_username
-    Created-by = var.ssh_username
-  }
+    Name      = "${var.ssh_username}"
+    Environment = "${var.ssh_username}"
+    OS_Version = "${var.ssh_username}"
+    Release    = "${var.ssh_username}"
+    Created-by = "${var.ssh_username}"
   }
 }
 
