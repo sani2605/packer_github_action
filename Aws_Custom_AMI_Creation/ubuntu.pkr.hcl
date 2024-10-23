@@ -13,11 +13,14 @@ source "amazon-ebs" "ami-ubuntu" {
   region        = var.region
 
   source_ami_filter {
-   filters  =  var.ami_filters    
+    filters = {
+      name  =  "${var.ami_filters}" 
+    }
+       
     } 
 
-    most_recent = true
-     owners  =  var.ami_owners
+     most_recent = true
+     owners  =  var.ami_owners 
      ssh_username=var.ssh_username
 }
 
