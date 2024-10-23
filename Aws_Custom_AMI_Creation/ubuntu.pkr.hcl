@@ -13,7 +13,6 @@ source "amazon-ebs" "ami-ubuntu" {
   region        = var.region
 
   source_ami_filter {
-    filters = 
       filters  =  var.ami_filters
       most_recent = true
      owners  =  var.ami_owners
