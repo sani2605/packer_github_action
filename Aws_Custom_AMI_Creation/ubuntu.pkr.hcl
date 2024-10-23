@@ -14,9 +14,9 @@ source "amazon-ebs" "ami-ubuntu" {
 
   source_ami_filter {
     filters = {
-      name  = "${ var.ami_filters }"
+      name  =  var.ami_filters
       most_recent = true
-     owners  =  "${var.ami_owners}"
+     owners  =  var.ami_owners
     }
 
      
@@ -38,25 +38,6 @@ build {
     ]
   } 
 }
-
-/* tags = {
-    Name      =  "${var.ssh_username}"
-    Environment = "${var.ssh_username}"
-    OS_Version = "${var.ssh_username}"
-    Release    = "${var.ssh_username}"
-    Created-by = "${var.ssh_username}"
-  } */
-  
- /* provisioner "file" {
-   source      = var.source_file         # Path to the local file
-   destination = var.destination_path    # Path on the build machine
- }
-
-provisioner "shell" {
-inline = [
-    echo 'File copied successfully!' > fp_req.txt
-  ] */
- 
 
 
 
