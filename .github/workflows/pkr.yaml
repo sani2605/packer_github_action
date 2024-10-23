@@ -39,7 +39,7 @@ jobs:
 
       - name: Run Packer Build
         run: |
-          cd ${{ github.workspace }}/Workspaces/Internships_Projects/Day03-Packer_Terraform_GitHubAction/Packer_GITHUB_ACTION/Aws_Custom_AMI_Creation
+          cd ${{ github.workspace }}/PACKER_GITHUB_ACTION/Aws_Custom_AMI_Creation
           packer init ubuntu.pkr.hcl
           packer fmt ubuntu.pkr.hcl
           packer validate ubuntu.pkr.hcl
