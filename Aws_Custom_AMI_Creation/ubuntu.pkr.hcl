@@ -14,10 +14,12 @@ source "amazon-ebs" "ami-ubuntu" {
 
   source_ami_filter {
     filters = {
-      name  =  "${var.ami_filters}" 
-       most_recent = true
-       owners  =  var.ami_owners 
-    }
+      name                = var.source_ami_filter_name
+      root-device-type    = var.source_ami_filter_root_device_type
+      virtualization-type = var.source_ami_filter_virtualization_type
+      }
+     most_recent = true
+     owners  =  var.ami_owners 
     }   
      ssh_username=var.ssh_username
 }
