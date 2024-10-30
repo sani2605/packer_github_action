@@ -1,20 +1,24 @@
 variable "ami_name" {
   type    = string
-  default = "packer-ubuntu-custome-image-{{timestamp}}"
+  #default = "packer-ubuntu-custome-image-{{timestamp}"
+  default     = "learn-packer-linux-aws-ubuntutest"
+  }
 
 /* validation {
     condition     = length(var.image_id) > 4 && substr(var.image_id, 0, 4) == "ami-"
     error_message = "The image_id value must be a valid AMI ID, starting with \"ami-\"."
   } */
-}
+
 
 variable "instance_type" {
+  description = "Type of instance to use"
   type    = string
   default = "t2.micro"
 }
 
 
 variable "region" {
+  description = "AWS region to build the AMI in"
   type    = string
   default = "us-east-1"
 }
@@ -22,7 +26,8 @@ variable "region" {
 variable "source_ami_filter_name" {
   description = "Source AMI filter name"
   type        = string
-  default     = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
+  #default     = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
+  default     = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20240927"
 }
 
 variable "source_ami_filter_root_device_type" {
@@ -59,7 +64,7 @@ variable "ssh_username" {
   }
   } */
 
-variable "source_file" {
+/* variable "source_file" {
   description = "The file to copy to the build machine"
   type        = string
   source=. /fp_req.txt
@@ -69,4 +74,4 @@ variable "destination_path" {
   description = "The destination path on the build machine"
   type        = string
   destination=/tmp/fp_req.txt
-}
+} */

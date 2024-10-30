@@ -8,20 +8,20 @@ packer {
 }
 
 source "amazon-ebs" "ami-ubuntu" {
-  ami_name      = var.ami_name
-  instance_type = var.instance_type
+  ami_name      = "${var.ami_name}"
+  instance_type = "${var.instance_type}"
   region        = var.region
 
   source_ami_filter {
     filters = {
-      name                = var.source_ami_filter_name
-      root-device-type    = var.source_ami_filter_root_device_type
-      virtualization-type = var.source_ami_filter_virtualization_type
+      name                = "${var.source_ami_filter_name}"
+      root-device-type    = "${var.source_ami_filter_root_device_type}"
+      virtualization-type = "${var.source_amisource_ami_filter_virtualization_type}"
       }
      most_recent = true
-     owners  =  var.ami_owners 
+     owners  = "${var.ami_owners}" 
     }   
-     ssh_username=var.ssh_username
+     ssh_username="${var.ssh_username}"
 }
 
 
